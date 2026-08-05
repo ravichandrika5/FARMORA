@@ -175,15 +175,17 @@ By combining modern web technologies with quantum-inspired optimization, Farmora
 
 ---
 
-# 👩‍💻 Author
+## 👨‍💻 Author
 
-**Rishika**
+**Ravi Chandrika K**
 
-Computer Science Engineering Student  
-Passionate about Full Stack Development, AI, and building impactful solutions.
+Final Year B.Tech Computer Science Engineering Student at Gokaraju Rangaraju Institute of Engineering and Technology (GRIET), Hyderabad.
 
-GitHub: https://github.com/rishika526
+Passionate about Full-Stack Development, Artificial Intelligence, and building technology-driven solutions that solve real-world problems.
 
+- 💼 LinkedIn: https://www.linkedin.com/in/ravi-chandrika-k-6156982a1
+- 💻 GitHub: https://github.com/ravichandrika5
+- 📧 Email: ravichandrika.k546@gmail.com
 ---
 
 # ⭐ If you like this project
