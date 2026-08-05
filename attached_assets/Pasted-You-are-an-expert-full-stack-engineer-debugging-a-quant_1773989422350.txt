@@ -1,0 +1,109 @@
+You are an expert full-stack engineer debugging a quantum computing application.
+
+My QAOA Simulation UI is stuck on "RUNNING ON SIMULATOR..." and never returns results.
+
+Fix the issue by making the QAOA demo FAST, RELIABLE, and NON-BLOCKING.
+
+--------------------------------------------------
+STEP 1: DEBUG THE ISSUE
+--------------------------------------------------
+
+Check:
+- Is the frontend calling the correct API endpoint (/quantum/qaoa-demo)?
+- Is the Node backend forwarding request to Python service?
+- Is Python service running properly?
+- Are there timeout issues?
+
+Add logs:
+- Log request received in Node
+- Log request received in Python
+- Log response before sending back
+
+--------------------------------------------------
+STEP 2: FIX PERFORMANCE (VERY IMPORTANT)
+--------------------------------------------------
+
+QAOA is likely too slow. Optimize:
+
+- LIMIT number of items to 6–8 max
+- Use shallow QAOA (p = 1)
+- Use simulator:
+  - AerSimulator
+- Reduce shots to:
+  - 128 or 256 (NOT 1024+)
+
+--------------------------------------------------
+STEP 3: ADD FALLBACK (CRITICAL)
+--------------------------------------------------
+
+If QAOA takes more than 5 seconds:
+- Automatically fallback to:
+  - classical simulated annealing result
+
+Return:
+{
+  result: [...],
+  mode: "fallback-classical"
+}
+
+Otherwise:
+{
+  result: [...],
+  mode: "qaoa"
+}
+
+--------------------------------------------------
+STEP 4: FIX API RESPONSE
+--------------------------------------------------
+
+Ensure Python returns JSON like:
+{
+  "selected_items": [...],
+  "probabilities": [...],
+  "bitstrings": [...]
+}
+
+Ensure Node properly sends it to frontend.
+
+--------------------------------------------------
+STEP 5: FRONTEND FIX
+--------------------------------------------------
+
+- Add timeout (5–6 seconds)
+- If no response:
+  show message:
+  "Quantum simulation took too long, showing optimized classical result"
+
+- Stop infinite loading spinner ALWAYS
+
+--------------------------------------------------
+STEP 6: MOCK RESULT (IMPORTANT FOR DEMO)
+--------------------------------------------------
+
+If Python fails:
+- Return mock QAOA result immediately
+
+Example:
+{
+  selected_items: [1,0,1,0,1],
+  probabilities: [0.2, 0.5, 0.3],
+  mode: "mock"
+}
+
+--------------------------------------------------
+STEP 7: SHOW RESULT VISUALLY
+--------------------------------------------------
+
+- Replace loader with:
+  - selected recommendations
+  - bar chart (Recharts) for probabilities
+
+--------------------------------------------------
+FINAL GOAL
+--------------------------------------------------
+
+- QAOA demo should NEVER get stuck loading
+- It should ALWAYS return something within 5 seconds
+- UI must smoothly transition from loading → result
+
+Fix everything and ensure smooth working system.

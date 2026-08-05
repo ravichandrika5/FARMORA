@@ -1,0 +1,174 @@
+You are an expert full-stack engineer and quantum computing developer.
+
+I already have a working frontend for a project called "Farmora" (React + Tailwind UI already built with pages: Home, Tutorials, AI Advisor, Shop Kits, Creator).
+
+Your task is to UPGRADE this project by making QUANTUM COMPUTING the CORE LOGIC of the application.
+
+IMPORTANT:
+- Do NOT rebuild the UI from scratch.
+- EXTEND the existing UI with sleek, modern components.
+- All major decision-making logic must come from a central "Quantum Optimization Engine".
+
+--------------------------------------------------
+CORE ARCHITECTURE (VERY IMPORTANT)
+--------------------------------------------------
+
+Create a backend service:
+
+Quantum Optimization Engine
+
+This engine will:
+- Model problems using QUBO (Quadratic Unconstrained Binary Optimization)
+- Solve using:
+  1) Simulated Annealing (quantum-inspired, main production solver)
+  2) QAOA (Quantum Approximate Optimization Algorithm) using Qiskit (demo mode)
+
+The SAME engine must power multiple features.
+
+--------------------------------------------------
+FEATURES TO IMPLEMENT
+--------------------------------------------------
+
+1) QUANTUM RECOMMENDATION SYSTEM (CORE FEATURE)
+- Used in:
+  - Home page ("Recommended for You")
+  - Tutorials page
+  - Shop Kits page
+- Input:
+  - user preferences (tags, difficulty, interests)
+  - list of items (tutorials/kits)
+- Objective:
+  - maximize relevance
+  - maximize diversity (avoid similar items)
+  - apply constraints (mix of beginner/intermediate, limit long content)
+- Output:
+  - optimized top 8–10 items
+
+Add UI:
+- Toggle button: "Quantum Optimized"
+- Show label: "Powered by Quantum Optimization"
+
+--------------------------------------------------
+
+2) QAOA DEMO MODE (REAL QUANTUM)
+- For the same recommendation problem:
+  - Allow user to click "Run Quantum Mode"
+- Use Qiskit to simulate QAOA on small dataset (8–12 items)
+- Show:
+  - selected items
+  - probability distribution (bar chart)
+- UI:
+  - modal or separate section "Quantum Demo"
+
+--------------------------------------------------
+
+3) GRAPH-BASED DISCOVERY (QUANTUM-INSPIRED)
+- Build a graph:
+  - nodes: tutorials, kits, creators
+  - edges: shared tags / category similarity
+- Implement:
+  - quantum-walk-inspired scoring (can be classical approximation)
+- Show:
+  - "Related Content"
+  - "Explore Similar Topics"
+
+--------------------------------------------------
+
+4) CREATOR REWARD OPTIMIZATION (QUBO)
+- Problem:
+  - select top creators to promote weekly
+- Inputs:
+  - engagement score
+  - fairness constraint (new creators)
+  - category diversity
+- Output:
+  - list of selected creators
+- UI:
+  - "Top Creators (Quantum Selected)"
+
+--------------------------------------------------
+
+5) QUANTUM RANDOM FEATURE
+- Generate:
+  - "Featured Creator of the Day"
+- Use:
+  - quantum random number generator (or simulated quantum randomness)
+- UI:
+  - small badge on homepage
+
+--------------------------------------------------
+
+6) OPTIONAL: FARM TASK PLANNER (ONLY IF SIMPLE)
+- Input:
+  - crop type, duration
+- Output:
+  - 5–7 day optimized plan
+- Keep logic simple (use QUBO constraints)
+
+--------------------------------------------------
+TECH STACK
+--------------------------------------------------
+
+Frontend:
+- React (Vite)
+- Tailwind CSS
+- Recharts (for QAOA visualization)
+
+Backend:
+- Node.js + Express
+
+Quantum:
+- Python microservice (Qiskit)
+- Communicate via REST API
+
+--------------------------------------------------
+IMPLEMENTATION DETAILS
+--------------------------------------------------
+
+- Create API endpoints:
+  - /quantum/recommend
+  - /quantum/qaoa-demo
+  - /quantum/creator-optimize
+  - /quantum/random
+
+- Use JSON for communication between Node and Python
+
+- Keep QUBO formulation modular:
+  - relevance term
+  - diversity penalty
+  - constraint penalties
+
+--------------------------------------------------
+UI/UX REQUIREMENTS
+--------------------------------------------------
+
+- Maintain existing green Farmora theme
+- Add subtle futuristic/AI feel (badges, glow, tags)
+- Add labels like:
+  - "Quantum Optimized"
+  - "AI + Quantum Powered"
+- Smooth animations (hover, transitions)
+
+--------------------------------------------------
+OUTPUT REQUIREMENTS
+--------------------------------------------------
+
+- Fully working backend + frontend integration
+- Clean folder structure:
+  - /backend
+  - /quantum-service (Python)
+  - /frontend
+
+- Include sample dataset (tutorials/kits/creators)
+- Add comments explaining QUBO and QAOA simply
+
+--------------------------------------------------
+GOAL
+--------------------------------------------------
+
+This should look like a production-ready app where:
+- Quantum optimization is the CORE ENGINE
+- Multiple features reuse the same quantum logic
+- UI looks modern, clean, and impressive for a hackathon demo
+
+Start implementation step by step and ensure everything runs.

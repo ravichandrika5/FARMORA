@@ -1,0 +1,123 @@
+Build a production-ready, modern frontend for a web app called “Farmora — From soil to solution: organic made practical”.
+
+Tech stack:
+- React + TypeScript + Vite
+- TailwindCSS
+- React Router
+- Component library: shadcn/ui (or equivalent clean UI kit)
+- Icons: lucide-react
+- Charts: recharts (only if needed)
+- State: React Context or Zustand (choose simple)
+- Use responsive design (mobile-first), smooth micro-interactions, and clean spacing.
+- Use dummy/mock data in /src/mock and keep API calls abstracted in /src/services with placeholder endpoints.
+
+Brand + UI style:
+- Feel: fresh, earthy, trustworthy, modern AgriTech
+- Colors: organic greens + neutral backgrounds (don’t hardcode too many colors; use Tailwind defaults + minimal theme)
+- Typography: clear, friendly, readable
+- Layout: minimal clutter, card-based sections, strong headings, clear CTAs
+
+Core problem to represent in UI:
+Farmora teaches organic farming practically using tutorials and user-generated videos. It uses AI/NLP to transcribe, summarize, and translate tutorials. It also links DIY organic kits for purchase and supports creator commissions and engagement-based rewards. It includes an AI advisory and recommendations section, with “quantum-inspired optimization” mentioned as an advanced optimization approach.
+
+Pages (React Router):
+1) Landing Page (/)
+   - Hero: “Organic made practical” + short subtitle
+   - Primary CTA: “Explore Tutorials”
+   - Secondary CTA: “Ask Farmora AI”
+   - Sections:
+     a) How it works (Upload/Watch → Transcribe → Summarize → Learn → Apply)
+     b) Featured Tutorials (cards with thumbnail, title, tags, duration)
+     c) DIY Kits & Resources (product cards with “View kit”)
+     d) Creator Rewards (short section showing commission + engagement rewards)
+     e) Testimonials/impact stats (mock stats)
+     f) Footer with links
+
+2) Tutorials Feed (/tutorials)
+   - Filters: category (compost, bio-pesticide, fertilizer), language, difficulty, duration
+   - Search bar
+   - Tutorial card grid list
+   - Clicking opens Tutorial Detail
+
+3) Tutorial Detail (/tutorials/:id)
+   - Video player placeholder
+   - Tabs:
+     - “Summary” (AI summary)
+     - “Transcript” (scrollable)
+     - “Steps” (structured step-by-step extracted)
+     - “Ingredients/Materials”
+     - “Comments”
+   - Actions:
+     - “Translate” dropdown (mock languages)
+     - “Download summary” (mock button)
+     - “Save to Library”
+
+4) Upload Tutorial (/upload)
+   - Multi-step form:
+     Step 1: Title, category, tags, difficulty
+     Step 2: Upload video (mock upload UI)
+     Step 3: Choose language + auto-detect toggle
+     Step 4: Submit → show progress states: “Transcribing… Summarizing… Translating…”
+   - After submit, redirect to the tutorial detail page (mock)
+
+5) Farmora AI Advisor (/advisor)
+   - Chat-like UI
+   - Sidebar quick prompts (e.g., “Best compost for tomatoes”, “Neem spray recipe”, “Soil health tips”)
+   - The assistant response card should also show:
+     - recommended tutorial links (mock)
+     - recommended DIY kit links (mock)
+
+6) DIY Kits Marketplace (/kits)
+   - Product listing with filters (type, price, rating)
+   - Product detail modal/page optional
+   - Each product card includes: “Affiliate link” indicator + “Creator commission enabled” badge
+
+7) Creator Dashboard (/creator)
+   - Overview cards:
+     - Total views, watch time, commissions earned, engagement score
+   - Tutorials performance table (mock)
+   - Payout status section
+   - “Rewards explained” tooltip
+
+8) About (/about)
+   - Clear project story, mission, features, and tech (AI/NLP + optimization)
+
+Components to build (reusable):
+- Navbar with active route highlighting
+- Footer
+- TutorialCard
+- KitCard
+- FilterBar
+- VideoPlayerPlaceholder
+- TranscriptPanel
+- SummaryPanel
+- StepsTimeline component
+- Chat UI components (message bubbles, input bar)
+- DashboardStatCard
+- DataTable (simple)
+
+Folder structure required:
+src/
+  components/
+  pages/
+  routes/
+  mock/
+  services/
+  styles/
+  assets/
+  types/
+
+Rules:
+- Provide FULL runnable code with package.json and all needed config.
+- No backend required now; just mock data and placeholder API calls.
+- Ensure the app runs with: npm install && npm run dev
+- Include a clean README with setup steps and page list.
+
+Extra polish:
+- Add a light/dark toggle
+- Add skeleton loaders for tutorial list and tutorial detail
+- Add basic form validation for upload form
+- Use accessible components (aria labels, keyboard-friendly)
+
+Output:
+Generate the complete project codebase.
