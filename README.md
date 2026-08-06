@@ -142,25 +142,12 @@ npm run dev
 
 ---
 
-# 📸 Screenshots
 
-*(Add screenshots here)*
-
-- Home Page
-- User Login
-- Creator Login
-- Tutorials
-- Organic Kits
-- Dashboard
-
----
 
 # 🌍 Future Scope
 
-- AI chatbot for farming assistance
 - Crop disease detection
 - Weather integration
-- Marketplace for organic products
 - Multilingual support
 - IoT-based smart farming
 - Community discussion forum
